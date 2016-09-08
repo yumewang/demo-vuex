@@ -1,0 +1,24 @@
+1. 学习 Vue
+  https://vuejs.org.cn/
+  关于前端技术栈 https://annatarhe.github.io/2016/01/10/front-end-tech-stack-in-my-view.html
+
+
+
+  vue-cli: how to create a project with webpack
+  plugin: vue-resource, vue-router
+
+  webpack
+  es6 语法
+  代码规范
+  promise
+
+
+  vux
+
+  demo
+    1. how to show page
+    2. request to handle data (vue-resource)
+    3. how to multi page (vue-router)
+    4. 
+
+页面显示，及数据处理(请求宝贝成长API: /users)
