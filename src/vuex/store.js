@@ -3,13 +3,14 @@ import Vuex from 'vuex'
 import VueResource from 'vue-resource'
 Vue.use(Vuex)
 Vue.use(VueResource)
-Vue.http.options.root = 'http://123.57.6.211:8080/api'
+Vue.http.options.root = 'https://cnodejs.org'
 Vue.http.options.emulateJSON = true
 
 const state = {
   user: {
     name: 'Yume Wang'
-  }
+  },
+  topics: []
 }
 
 const mutations = {
@@ -21,6 +22,13 @@ const mutations = {
       if (response.ok) {
         window.sessionStorage.setItem('children', JSON.stringify(response.data.children[0]))
         state.user = response.data.children[0]
+      }
+    })
+  },
+  GETTOPICS (state) {
+    Vue.http.get('api/v1/topics').then(response => {
+      if (response.ok) {
+        state.topics = response.body.data
       }
     })
   }

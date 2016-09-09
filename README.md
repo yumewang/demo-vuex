@@ -34,6 +34,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 * [Vuex tutorial](http://vuex.vuejs.org/zh-cn/tutorial.html)
 * [Vue plugins](https://vuejs.org.cn/guide/plugins.html)
 * [vue-cli: A simple CLI for scaffolding Vue.js projects.](https://github.com/vuejs/vue-cli)
+* [vuetable - data table simplify!](https://github.com/ratiw/vue-table)
 * [Vux: Be Cool with Vue and WeUI.](https://github.com/airyland/vux)
 * [关于前端技术栈](https://annatarhe.github.io/2016/01/10/)
 

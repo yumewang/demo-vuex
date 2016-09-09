@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img class="logo" src="./assets/logo.png">
-    <user></user>
+    <topics></topics>
     <p>
       Welcome to your Vue.js app!
     </p>
@@ -24,11 +24,13 @@
 
 <script>
 import User from './components/User'
+import Topics from './components/Topics'
 import store from './vuex/store'
 
 export default {
   components: {
-    User
+    User,
+    Topics
   },
   store
 }
@@ -43,13 +45,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  /* height: 100%; */
 }
 
 #app {
   color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
 }
