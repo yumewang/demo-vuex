@@ -21,7 +21,6 @@
         wrapper-class="vuetable-wrapper"
         table-wrapper=".vuetable-wrapper"
         loading-class="loading"
-        detail-row-callback="makeDetailRow"
         detail-row-id="id"
         detail-row-transition="expand"
         row-class-callback="rowClassCB"
@@ -53,8 +52,7 @@ let tableColumns = [
     name: 'gender',
     sortField: 'gender',
     titleClass: 'text-center',
-    dataClass: 'text-center',
-    callback: 'gender'
+    dataClass: 'text-center'
   },
   {
     name: 'created_at',
@@ -82,6 +80,18 @@ export default {
     }
   },
   methods: {
+    /**
+     * Callback functions
+     */
+    allCap: function (value) {
+      return value.toUpperCase()
+    },
+    formatDate: function (value, fmt) {
+      if (value === null) return ''
+      fmt = (typeof fmt === 'undefined') ? 'D MMM YYYY' : fmt
+      // return moment(value, 'YYYY-MM-DD').format(fmt)
+      return value
+    },
     viewProfile: function (id) {
       console.log('view profile with id:', id)
     },
