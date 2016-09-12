@@ -9,3 +9,15 @@ export const getTopics = function ({ dispatch, state }) {
 export const setCurrentPage = function ({ dispatch, state }, currentPage) {
   dispatch('SETCURRENTPAGE', currentPage)
 }
+
+export const setCurrentId = function ({ dispatch, state }, currentId) {
+  dispatch('SETCURRENTID', currentId)
+}
+
+export const getDetailById = function ({ dispatch, state }, currentId) {
+  dispatch('GETDETAILBYID', currentId)
+}
+
+export const updateForm = function ({ dispatch, state }, data) {
+  console.log(data.name) // TODO
+}

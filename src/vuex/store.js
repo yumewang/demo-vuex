@@ -8,6 +8,8 @@ Vue.http.options.emulateJSON = true
 
 const state = {
   currentPage: null,
+  currentId: null,
+  formDetail: {},
   user: {
     name: 'Yume Wang'
   },
@@ -17,6 +19,17 @@ const state = {
 const mutations = {
   SETCURRENTPAGE (state, currentPage) {
     state.currentPage = currentPage
+  },
+  SETCURRENTID (state, currentId) {
+    console.log(currentId)
+    state.currentId = currentId
+  },
+  GETDETAILBYID (state, currentId) {
+    Vue.http.get('http://vuetable.ratiw.net/api/users?sort=&page=1&per_page=10').then(response => {
+      if (response.ok) {
+        state.formDetail = response.body.data[Math.floor((Math.random() * 10) + 1)]
+      }
+    })
   },
   GETUSERINFO (state) {
     Vue.http.post('users', {

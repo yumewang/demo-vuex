@@ -1,6 +1,10 @@
 <template>
   <div class="topics-list table-responsive container">
     <div>{{currentPage}}</div>
+    <div class="handle-form">
+      <!-- Form elments children -->
+      <form-details></form-details>
+    </div>
     <div id="content" class="ui basic segment">
       <h3 class="ui header">List of Users</h3>
       <vuetable v-ref:vuetable
@@ -31,9 +35,14 @@
 </template>
 <script>
 import { tableColumns } from '../table-config'
+import FormDetails from './FormDetails'
 export default {
+  components: {
+    FormDetails
+  },
   vuex: {
     getters: {
+      currentPage: ({ currentPage }) => currentPage,
       fields: function (state) {
         return tableColumns[state.currentPage]
       }

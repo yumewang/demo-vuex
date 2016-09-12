@@ -6,23 +6,31 @@
   </div>
 </template>
 <script>
-export default {
-  props: {
-    rowData: {
-      type: Object,
-      required: true
-    }
-  },
-  methods: {
-    itemAction: function (action, data) {
-      // sweetAlert('custom-action: ' + action, data.name)
+  import { setCurrentId, getDetailById } from '../vuex/actions'
+  export default {
+    props: {
+      rowData: {
+        type: Object,
+        required: true
+      }
     },
-    onClick: function (event) {
-      console.log('custom-action: on-click', event.target)
+    vuex: {
+      actions: {
+        setCurrentId,
+        getDetailById
+      }
     },
-    onDoubleClick: function (event) {
-      console.log('custom-action: on-dblclick', event.target)
+    methods: {
+      itemAction: function (action, data) {
+        this.setCurrentId(data.id)
+        this.getDetailById(data.id)
+      },
+      onClick: function (event) {
+        console.log('custom-action: on-click', event.target)
+      },
+      onDoubleClick: function (event) {
+        console.log('custom-action: on-dblclick', event.target)
+      }
     }
   }
-}
 </script>
