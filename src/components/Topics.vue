@@ -62,6 +62,12 @@ let tableColumns = [
     callback: 'formatDate|D/MM/Y'
   },
   {
+    name: '__component:custom-action',
+    title: 'Component',
+    titleClass: 'center aligned',
+    dataClass: 'custom-action center aligned'
+  },
+  {
     name: '__actions',
     title: '',
     titleClass: 'text-center',
