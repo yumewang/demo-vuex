@@ -7,6 +7,7 @@ Vue.http.options.root = 'https://cnodejs.org'
 Vue.http.options.emulateJSON = true
 
 const state = {
+  currentPage: null,
   user: {
     name: 'Yume Wang'
   },
@@ -14,6 +15,9 @@ const state = {
 }
 
 const mutations = {
+  SETCURRENTPAGE (state, currentPage) {
+    state.currentPage = currentPage
+  },
   GETUSERINFO (state) {
     Vue.http.post('users', {
       user_id: 3,

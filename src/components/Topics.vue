@@ -1,5 +1,6 @@
 <template>
   <div class="topics-list table-responsive container">
+    <div>{{currentPage}}</div>
     <div id="content" class="ui basic segment">
       <h3 class="ui header">List of Users</h3>
       <vuetable v-ref:vuetable
@@ -29,56 +30,18 @@
   </div>
 </template>
 <script>
-let tableColumns = [
-  {
-    name: 'name',
-    sortField: 'name'
-  },
-  {
-    name: 'email',
-    sortField: 'email'
-  },
-  {
-    name: 'nickname',
-    sortField: 'nickname',
-    callback: 'allCap'
-  },
-  {
-    name: 'birthdate',
-    sortField: 'birthdate',
-    callback: 'formatDate|D/MM/Y'
-  },
-  {
-    name: 'gender',
-    sortField: 'gender',
-    titleClass: 'text-center',
-    dataClass: 'text-center'
-  },
-  {
-    name: 'created_at',
-    title: 'Created',
-    titleClass: 'text-center',
-    dataClass: 'text-center',
-    callback: 'formatDate|D/MM/Y'
-  },
-  {
-    name: '__component:custom-action',
-    title: 'Component',
-    titleClass: 'center aligned',
-    dataClass: 'custom-action center aligned'
-  },
-  {
-    name: '__actions',
-    title: '',
-    titleClass: 'text-center',
-    dataClass: 'text-center'
-  }
-]
+import { tableColumns } from '../table-config'
 export default {
+  vuex: {
+    getters: {
+      fields: function (state) {
+        return tableColumns[state.currentPage]
+      }
+    }
+  },
   data () {
     return {
       searchFor: '',
-      fields: tableColumns,
       perPage: 10,
       paginationComponent: 'vuetable-pagination',
       paginationInfoTemplate: 'แสดง {from} ถึง {to} จากทั้งหมด {total} รายการ',
