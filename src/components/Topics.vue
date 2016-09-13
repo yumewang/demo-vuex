@@ -1,12 +1,9 @@
 <template>
   <div class="topics-list table-responsive container">
-    <div>{{currentPage}}</div>
-    <div class="handle-form">
-      <!-- Form elments children -->
-      <form-details></form-details>
-    </div>
     <div id="content" class="ui basic segment">
-      <h3 class="ui header">List of Users</h3>
+      <h3 class="ui header">{{currentPage}} List
+        <button @click="createData" class="btn btn-default">New</button>
+      </h3>
       <vuetable v-ref:vuetable
         api-url="http://vuetable.ratiw.net/api/users"
         pagination-path=""
@@ -58,6 +55,11 @@ export default {
     }
   },
   methods: {
+    createData: function () {
+      this.$router.go({
+        path: `/${this.currentPage}/new`
+      })
+    },
     /**
      * Callback functions
      */

@@ -1,5 +1,4 @@
 export const formColumns = {
-  currentPage1: [],
   topics: [
     {
       name: 'name',

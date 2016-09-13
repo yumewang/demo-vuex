@@ -15,6 +15,9 @@
       }
     },
     vuex: {
+      getters: {
+        currentPage: ({ currentPage }) => currentPage
+      },
       actions: {
         setCurrentId,
         getDetailById
@@ -23,7 +26,9 @@
     methods: {
       itemAction: function (action, data) {
         this.setCurrentId(data.id)
-        this.getDetailById(data.id)
+        this.$router.go({
+          path: `/${this.currentPage}/${data.id}/edit`
+        })
       },
       onClick: function (event) {
         console.log('custom-action: on-click', event.target)

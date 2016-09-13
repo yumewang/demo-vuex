@@ -15,6 +15,20 @@ export function configRouter (router) {
       component: function (resolve) {
         require(['./components/Topics'], resolve)
       }
+    },
+    '/:page/:id/edit': {
+      name: 'Edit',
+      title: 'Edit',
+      component: function (resolve) {
+        require(['./components/edit'], resolve)
+      }
+    },
+    '/:page/new': {
+      name: 'New',
+      title: 'New',
+      component: function (resolve) {
+        require(['./components/New'], resolve)
+      }
     }
   })
 
@@ -24,7 +38,8 @@ export function configRouter (router) {
   })
 
   router.beforeEach(({ to, next }) => {
-    setCurrentPage(store, to.name)
+    // console.log(to.path.split('/')[1])
+    setCurrentPage(store, to.path.split('/')[1])
     next()
   })
 
