@@ -1,6 +1,6 @@
 export const tableColumns = {
   currentPage1: [],
-  topics: [
+  subjects: [
     {
       name: 'name',
       sortField: 'name'

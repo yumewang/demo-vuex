@@ -44,11 +44,7 @@
       getters: {
         currentPage: ({ currentPage }) => currentPage,
         currentId: ({ currentId }) => currentId,
-        details: ({ formDetail }) => {
-          console.log('1')
-          console.log(formDetail)
-          return formDetail
-        },
+        details: ({ formDetail }) => formDetail,
         fields: function (state) {
           return formColumns[state.currentPage]
         }

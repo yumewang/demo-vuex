@@ -1,18 +1,26 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <custom-action :row-data="rowData"></custom-action>
   </div>
 </template>
 
 <script>
+import CustomAction from './CustomAction'
 export default {
+  components: {
+    CustomAction
+  },
   data () {
     return {
       // note: changing this line won't causes changes
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
-      msg: 'Hello World!'
+      msg: 'Hello World!',
+      rowData: {
+        id: 1
+      }
     }
   }
 }

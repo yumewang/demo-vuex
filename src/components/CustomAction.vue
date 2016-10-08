@@ -1,8 +1,8 @@
 <template>
   <div>
-    <button @click="itemAction('view-item', rowData)"><i class="glyphicon glyphicon-zoom-in"></i></button>
-      <button @click="itemAction('edit-item', rowData)"><i class="glyphicon glyphicon-pencil"></i></button>
-    <button @click="itemAction('delete-item', rowData)"><i class="glyphicon glyphicon-remove"></i></button>
+    <button @click="itemAction('view-item', rowData)"><i class="glyphicon glyphicon-zoom-in"></i>查看</button>
+    <button @click="itemAction('edit-item', rowData)"><i class="glyphicon glyphicon-pencil"></i>编辑</button>
+    <button @click="itemAction('delete-item', rowData)"><i class="glyphicon glyphicon-remove"></i>删除</button>
   </div>
 </template>
 <script>
@@ -25,10 +25,22 @@
     },
     methods: {
       itemAction: function (action, data) {
-        this.setCurrentId(data.id)
-        this.$router.go({
-          path: `/${this.currentPage}/${data.id}/edit`
-        })
+        switch (action) {
+          case 'view-item':
+            this.$router.go({
+              path: `/app/${this.currentPage}/1`
+            })
+            break
+          case 'edit-item':
+            this.$router.go({
+              path: `/app/${this.currentPage}/1/edit`
+            })
+            break
+          case 'delete-item':
+            break
+          default:
+            console.log('TODO')
+        }
       },
       onClick: function (event) {
         console.log('custom-action: on-click', event.target)
