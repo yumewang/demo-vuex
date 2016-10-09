@@ -12,11 +12,11 @@ import CustomAction from './components/CustomAction'
 
 const tableColumns = {
   title: {
-    issues: '期号',
-    subjects: '话题',
-    sessions: '专家解密',
-    'recommend_articles': '相关推荐',
-    comments: '评论'
+    list1: '数据1',
+    list2: '数据2',
+    list3: '数据3',
+    list4: '数据4',
+    list5: '数据5'
   }
 }
 // Vue Breadcrumbs source code, from: https://github.com/samturrell/vue-breadcrumbs

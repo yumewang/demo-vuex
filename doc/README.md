@@ -100,4 +100,4 @@ export default function VueBreadcrumbs (Vue, options = {}) {
 Vue.use(VueBreadcrumbs)
 ```
 and then result will be like this:
-![Breadcrumbs demo](https://github.com/yumewang/demo-vuex/blob/master/static/images/breadcrumbs%20%20.png)
+![Breadcrumbs demo](https://github.com/yumewang/demo-vuex/blob/master/static/images/breadcrumbs.png)
