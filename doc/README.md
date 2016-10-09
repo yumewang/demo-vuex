@@ -1,5 +1,4 @@
 # Handled Questions
-----------
 
 ## 1. How to create breadcrumbs with routes with params
 ### Reference
@@ -7,7 +6,6 @@
  - [vue-router](https://github.com/vuejs/vue-router)
  - [Optional route params](https://github.com/vuejs/vue-router/issues/235)
 
-----------
 
 When define routes with params, and use [vue-breadcrumbs](https://github.com/samturrell/vue-breadcrumbs) to define breadcrumbs can not create corretly. Moreover, If I want to change breadcrumbs value, that's can not be done.
 When I was implementing frontend of Backend, I defined routes like this:
