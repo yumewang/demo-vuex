@@ -56,8 +56,8 @@ npm install -g vue-cli
 vue init webpack demo-vuex
 ```
 # Handled Questions
-## 1. How to create breadcrumbs
-When define route with params, and use [vue-breadcrumbs](https://github.com/samturrell/vue-breadcrumbs) to define breadcrumbs can not create corretly. Moreover, If I want to change breadcrumbs value, that's can not be done.
+## 1. How to create breadcrumbs with routes with params
+When define routes with params, and use [vue-breadcrumbs](https://github.com/samturrell/vue-breadcrumbs) to define breadcrumbs can not create corretly. Moreover, If I want to change breadcrumbs value, that's can not be done.
 When I was implementing frontend of Backend, I defined routes like this:
 ```javascript
   router.map({
@@ -103,7 +103,8 @@ When I was implementing frontend of Backend, I defined routes like this:
     }
   })
 ```
-If I use [vue-breadcrumbs](https://github.com/samturrell/vue-breadcrumbs) to define breadcrumbs directly, I can not change value of breadcrumb at define routes use tableColumns.
+There will have two params: page (which page you view) and id (which data you edit, or view).
+And then if I use [vue-breadcrumbs](https://github.com/samturrell/vue-breadcrumbs) to define breadcrumbs directly, I can not change value of breadcrumb at define routes use tableColumns.
 ```javascript
 const tableColumns = {
   title: {
