@@ -29,7 +29,11 @@ export default function VueBreadcrumbs (Vue, options = {}) {
           if (this.$route.matched[i].handler && this.$route.matched[i].handler.breadcrumb) {
             let currentBread = this.$route.matched[i].handler.breadcrumb
             if (currentBread === 'List' || /全部/.test(currentBread)) {
-              this.$route.matched[i].handler.breadcrumb = '全部' + tableColumns.title[store.state.currentPage]
+              let currentPage = this.$route.params.page
+              // Use vuex state to keep current page
+              // let currentPage = store.state.currentPage
+              // You can change value of breadcrumb before create crumbs.
+              this.$route.matched[i].handler.breadcrumb = '全部' + tableColumns.title[currentPage]
             }
             crumbs.push(this.$route.matched[i])
           }
