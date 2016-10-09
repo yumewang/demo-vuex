@@ -53,7 +53,7 @@ When I was implementing frontend of Backend, I defined routes like this:
     }
   })
 ```
-There will have two params: page (which page you view) and id (which data you edit, or view).
+There will have two params: **page (which page you view) and id (which data you edit, or view)**.
 And then if I use [vue-breadcrumbs](https://github.com/samturrell/vue-breadcrumbs) to define breadcrumbs directly, I can not change value of breadcrumb at define routes use tableColumns.
 ```javascript
 const tableColumns = {
