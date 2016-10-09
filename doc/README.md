@@ -1,5 +1,14 @@
 # Handled Questions
+----------
+
 ## 1. How to create breadcrumbs with routes with params
+### Reference
+ - [vue-breadcrumbs](https://github.com/samturrell/vue-breadcrumbs)
+ - [vue-router](https://github.com/vuejs/vue-router)
+ - [Optional route params](https://github.com/vuejs/vue-router/issues/235)
+
+----------
+
 When define routes with params, and use [vue-breadcrumbs](https://github.com/samturrell/vue-breadcrumbs) to define breadcrumbs can not create corretly. Moreover, If I want to change breadcrumbs value, that's can not be done.
 When I was implementing frontend of Backend, I defined routes like this:
 ```javascript
@@ -70,6 +79,7 @@ export default function VueBreadcrumbs (Vue, options = {}) {
         for (var i = 0; i < this.$route.matched.length; i++) {
           if (this.$route.matched[i].handler && this.$route.matched[i].handler.breadcrumb) {
             let currentBread = this.$route.matched[i].handler.breadcrumb
+            // This condition is not good, but now just can fix my problem.
             if (currentBread === 'List' || /全部/.test(currentBread)) {
               let currentPage = this.$route.params.page
               // Use vuex state to keep current page
