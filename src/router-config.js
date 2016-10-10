@@ -50,12 +50,18 @@ export function configRouter (router) {
           }
         }
       }
+    },
+    'list': {
+      name: 'list',
+      component: function (resolve) {
+        require(['./components/List'], resolve)
+      }
     }
   })
 
   // Redirect
   router.redirect({
-    '*': '/topics'
+    '*': '/list'
   })
 
   router.beforeEach(({ to, next }) => {

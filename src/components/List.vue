@@ -37,16 +37,18 @@ export default {
   components: {
     FormDetails
   },
-  vuex: {
-    getters: {
-      currentPage: ({ currentPage }) => currentPage,
-      fields: function (state) {
-        return tableColumns[state.currentPage]
-      }
-    }
-  },
+  // vuex: {
+  //   getters: {
+  //     currentPage: ({ currentPage }) => currentPage,
+  //     fields: function (state) {
+  //       return tableColumns[state.currentPage]
+  //     }
+  //   }
+  // },
   data () {
     return {
+      currentPage: 'subjects',
+      fields: tableColumns.subjects,
       searchFor: '',
       perPage: 10,
       paginationComponent: 'vuetable-pagination',
